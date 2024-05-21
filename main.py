@@ -4,7 +4,7 @@ import requests
 #imports a dictionary of data from dog_breeds.py and "prettifies", or styles, the dog names when they appear in the HTML page
 from dog_breeds import prettify_dog_breed
 
-app = Flask("app")
+app = Flask(__name__)
 
 
 #function adds a dash in the URL between breed names with multiple words like miniature poodle
@@ -41,6 +41,5 @@ def get_random():
   dog_images = [data["message"]]
   return render_template("dogs.html", images=dog_images)
 
-
-app.debug = True
-app.run(host='0.0.0.0', port=8080)
+if __name__ == '__main__':
+    app.run(debug=False)
