@@ -42,4 +42,4 @@ def get_random():
   return render_template("dogs.html", images=dog_images)
 
 if __name__ == '__main__':
-    app.run(debug = "TRUE")
+    app.run()
